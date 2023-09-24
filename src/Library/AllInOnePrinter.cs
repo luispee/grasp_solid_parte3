@@ -14,6 +14,7 @@ namespace Full_GRASP_And_SOLID.Library
         File
     }
 
+    //AllInOnePrinter deja de ser utilizada ya que ahora contamos con 2 tipos de impresora que implementan el mismo metodo PrintRecipe()
     public class AllInOnePrinter
     {
         public void PrintRecipe(Recipe recipe, Destination destination)

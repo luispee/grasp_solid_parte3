@@ -26,9 +26,13 @@ namespace Full_GRASP_And_SOLID
             recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
             recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));
 
-            AllInOnePrinter printer = new AllInOnePrinter();
-            printer.PrintRecipe(recipe, Destination.Console);
-            printer.PrintRecipe(recipe, Destination.File);
+            //Actualizo program para testear el correcto funcionamiento de la refactorizacion
+            IPrinter consolePrinter = new ConsolePrinter();
+            consolePrinter.PrintRecipe(recipe);
+
+            //Ambas printers cumplen con LSP ya que el resultado es el mismo y no hay efectos colaterales inesperados
+            IPrinter filePrinter = new FilePrinter();
+            filePrinter.PrintRecipe(recipe);
         }
 
         private static void PopulateCatalogs()
